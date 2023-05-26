@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {{ forms.csrf_token }}
+        {{ forms.name.label() }} {{ forms.name() }}
+        {{ forms.author.label() }} {{ forms.author() }}
+        {{ forms.rating.label() }} {{ forms.rating() }}
+        <a href="{{ url_for('home')}}">{{ forms.submit() }}</a>
+    </form>
+</body>
+</html>
