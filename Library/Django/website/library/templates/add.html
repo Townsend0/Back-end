@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.book_name.label_tag }} {{ form.book_name }}
+        {{ form.book_author.label_tag }} {{ form.book_author }}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {{ form.rating.label_tag }} {{ form.rating }}
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>
