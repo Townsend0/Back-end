@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Cafes{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+	  <table class="table">
+      <tr><td>Cafe Name</td><td>Location</a></td><td>Open</td><td>Close</td><td>Coffee</td><td>Wifi</td><td>Power</td></tr>
+      {% for a in cafes %}
+        <tr><td>{{ a.name }}</td><td><a href="{{ a.location }}">Map Link</a></td><td>{{ a.opens }}</td><td>{{ a.closes }}</td><td>{{ a.coffee }}</td><td>{{ a.wifi }}</td><td>{{ a.power }}</td></tr>
+      {% endfor %}
+    </table>
+      <p><a href="{% url 'home' %}">Return to index page</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
