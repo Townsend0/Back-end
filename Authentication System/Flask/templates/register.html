@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="box">
+	<h1>Register</h1>
+    <p>{{ error }}</p>
+    <form action="{{ url_for('register') }}" method="post">
+    	{{ form.email() }}
+    	{{ form.password() }}
+    	{{ form.name() }}
+    	{{ form.submit() }}
+    </form>
+</div>
+
+{% endblock %}
